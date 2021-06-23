@@ -1,0 +1,41 @@
+system:
+  debugger: 0
+perkins:
+  db: 
+    saascore:
+      user: 
+      pass: 
+      host: po3-scprod-db
+      name: po_saascore
+  scenario:
+    default:
+      scenario: check_po3_login_status
+      environment: dev
+      maxtime: 60
+    environment:
+      available: 
+        - ihpreprod
+        - ihprod
+        - modbidprod
+        - modbidpreprod
+        - dev
+      ihprod:
+        hostname: http://ih.proactiveoffice.com
+        username: [IH_PROD_USER]
+        password: [IH_PROD_PASS]
+      ihpreprod:
+        hostname: https://ih.preprod.proactiveoffice.com
+        username: [IH_PREPROD_USER]
+        password: [IH_PREPROD_PASS]
+      modbidprod:
+        hostname: http://mode.po3
+        username: [HACIENDA_PROD_USER]
+        password: [HACIENDA_PROD_PASS]
+      modbidprod:
+        hostname: http://mode.po3
+        username: [HACIENDA_PROD_USER]
+        password: [HACIENDA_PROD_PASS]
+      dev:
+        hostname: https://amsavpp.po3
+        username: dlopez@proactiveoffice.com
+        password: password

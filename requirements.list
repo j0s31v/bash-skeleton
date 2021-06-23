@@ -1,0 +1,9 @@
+awk
+make
+logrotate
+git
+git-core
+curl
+rsync
+jq
+mysql-client

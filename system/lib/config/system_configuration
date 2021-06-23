@@ -1,0 +1,17 @@
+#!/bin/bash
+
+source "${SYS_DIR}/lib/yaml.sh"
+
+eval "$(parse_yaml "${CONFIG_DIR}/parameters.yml")"
+
+[[ -z "$system_debugger" ]] && system_debugger=0
+
+readonly DEBUGGER="$system_debugger"
+readonly USR_DIR="$ROOT_DIR/var/user"
+readonly CLEAN_FILES_AND_FOLDERS=1
+readonly CURL_COOKIE="${TMP_DIR}/curl/curl_helper_cookie.txt"
+readonly CURL_TIMEOUT=30
+readonly CURL_USERAGENT="CURL/AGENT"
+readonly CURL_FAIL_ON_ERROR=1
+readonly LOGFILE="$LOG_DIR/app.log"
+readonly LOG_LEVEL=4

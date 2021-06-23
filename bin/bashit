@@ -1,0 +1,31 @@
+#!/bin/bash  
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+if [[ -L "${DIR}/perkins" ]]; then
+  DIR=$( cd "$( dirname "$(readlink "${DIR}/perkins")" )" && pwd )
+fi
+
+source "${DIR}/../system/cli/command.sh"
+source "${APP_DIR}/bashit/configuration.sh"
+
+function show_version() {
+  echo -e "perkins version: ${VERSION}"
+  exit 0
+}
+
+function load_subcommands() {
+  declare -g -A CLI_SUBCOMMANDS=()
+  declare -g -A CLI_SUBCOMMANDS_EXEC=()
+  declare -g -A CLI_SUBCOMMANDS_DESC=()
+
+  CLI_SUBCOMMANDS_EXEC["run"]="bashit_run"
+  CLI_SUBCOMMANDS_DESC["run"]="BAshit"  
+   
+}
+
+function bashit_run() {
+  source "${APP_DIR}/bashit/example/example_cli.sh"
+  example::run::cli $@
+}
+  
+# bin/command subcomand --param1='dfdf' --param2='dsfsfs'
+excecute $@

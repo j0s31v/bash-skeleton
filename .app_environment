@@ -1,0 +1,5 @@
+#!/bin/bash
+
+readonly     APP_VERSION="0.1.0"
+readonly        APP_NAME="bashit"
+readonly APP_DESCRIPTION=""

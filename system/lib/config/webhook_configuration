@@ -1,0 +1,9 @@
+#!/bin/bash
+
+source "${SYS_DIR}/lib/yaml.sh"
+eval "$(parse_yaml "${CONFIG_DIR}/parameters.yml")"
+
+# del modulo slack,, a modificar
+readonly SLACK_WEBHOOK=""
+readonly SLACK_SENDER_USERNAME=""
+readonly SLACK_SENDER_USERICON=""
